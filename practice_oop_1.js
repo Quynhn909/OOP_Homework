@@ -12,19 +12,29 @@
 
 
 class Rectangle {
-    height = "5";
-    width =  "3";
-    chuVi = (5+3) * 2;
-    dienTich = 5 * 3;
-    
+    constructor(length, width){
+        this.length = length;
+        this.width =  width;
+    }
+   area(){
+return this.length * this.width;
+   }
+    perimeter(){
+        return (this.length + this.width) * 2;
+    }
     showInfo() {
-        console.log(this.height, this.width, this.chuVi, this.dienTich);
+        console.log("--------------------------");
+        console.log(`Length: ${this.length}`);
+        console.log(`Width: ${this.width}`);
+        console.log(`Perimeter: ${this.perimeter()}`);
+        console.log(`Area: ${this.area()}`);
+        console.log("--------------------------");
     }
 }
 
-Rectangle1 = new Rectangle("5", "3");
-console.log(Rectangle1.height);
-console.log(Rectangle1.width);
-console.log(Rectangle1.chuVi);
-console.log(Rectangle1.dienTich);
-Rectangle1.Constructor();
+rec1 = new Rectangle(100,50);
+rec2 = new Rectangle(20,10);
+
+rec1.showInfo();
+rec2.showInfo();
+

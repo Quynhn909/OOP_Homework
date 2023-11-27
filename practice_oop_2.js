@@ -19,23 +19,40 @@
  */
 
 class Vehicle {
-    carName = "Tesla";
-    ownerName =  "Tim";
-    carColor = "black";
-    dungTich = "50"
-    price = "100000"
-    showInfo() {
-        console.log(this.carName, this.ownerName, this.carColor);
+    constructor(ownerName, vehicleType, cylinderCapacity, cost){
+        this.ownerName = ownerName;
+        this.vehicleType = vehicleType;
+        this.cylinderCapacity = cylinderCapacity;
+        this.cost = cost;
     }
-}
 
-Tax() {
-    if( dungTich < 100){
-        Tax = 1% * price;    
-    }else if ( 100 < dungTich < 200){
-        Tax = 3% * price; 
-    }else if ( 20 < dungTich){
-        Tax = 5% * price; 
-}
+    taxValue() {
+        if (this.cylinderCapacity < 100){
+            taxValue = 0.01 * this.cost;
+        }else if (this.cylinderCapacity >= 100 && this.cylinderCapacity <= 200){
+            taxValue = 0.03 * this.cost;
+        }else {
+            taxValue = 0.05 * this.cost;
+        }
+
+        return taxValue;
+    }
+    
+    showInfo() {
+        console.log('--------------------------');
+        console.log(`Owner name: ${this.ownerName}`);
+        console.log(`Vehicle type: ${this.vehicleType}`);
+        console.log(`Cylinder capacity: ${this.cylinderCapacity}`);
+        console.log(`Cost: ${this.cost}`);
+        console.log(`Tax value: ${this.taxValue()}`);
+        console.log('--------------------------');
+    }
+    }
+
+vehicle1 = new Vehicle("Nguyen Van A", "Wave", "50", "10000000");
+vehicle1 = new Vehicle("Tran Van B", "honda", "150", "25000000");
+
+vehicle1.showInfo();
+vehicle2.showInfo();
 
 
